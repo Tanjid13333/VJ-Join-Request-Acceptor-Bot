@@ -27,3 +27,7 @@
 ## Support Group [VJ Support](https://telegram.me/vj_bot_disscussion)
 
 ## Credit - [Tech VJ](https://youtube.com/@Tech_VJ)
+
+
+## Deployment
+This bot starts with `python3 bot.py` and exposes a Render health endpoint.
