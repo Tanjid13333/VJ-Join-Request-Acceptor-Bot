@@ -1,15 +1,5 @@
-import os
-import threading
-
 from pyrogram import Client
 from config import API_ID, API_HASH, BOT_TOKEN
-from app import app
-
-
-def run_health_server():
-    """Keep a small HTTP endpoint available for Render Web Service checks."""
-    port = int(os.environ.get("PORT", "10000"))
-    app.run(host="0.0.0.0", port=port, threaded=True, use_reloader=False)
 
 class Bot(Client):
 
@@ -40,5 +30,4 @@ class Bot(Client):
         print('Bot Stopped Bye')
 
 if __name__ == "__main__":
-    threading.Thread(target=run_health_server, daemon=True).start()
     Bot().run()
