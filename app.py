@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'TechVJ'
+    return 'VJ Join Request Acceptor Bot is running', 200
 
 
 if __name__ == "__main__":
