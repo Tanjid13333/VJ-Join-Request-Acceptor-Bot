@@ -22,12 +22,31 @@
 - `/logout` : logout your telegram account 
 - `/broadcast` : reply this command to your broadcast message in bot.</b>
 
+## Render Deployment
+
+This repository includes `render.yaml` and `Procfile` for Render.
+
+### Option 1: Blueprint deploy
+
+1. Open Render Dashboard.
+2. Select **New → Blueprint**.
+3. Connect this GitHub repository.
+4. Select the `main` branch.
+5. Render will use the included `render.yaml` automatically.
+
+### Option 2: Manual Web Service
+
+- **Runtime:** Python
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `gunicorn app:app --bind 0.0.0.0:$PORT & python3 bot.py`
+- **Branch:** `main`
+- **Plan:** Free
+- **Health Check Path:** `/`
+
+The Flask endpoint keeps the Render Web Service port open while the Telegram bot runs in the same service.
+
 ## Update Channel [VJ Botz](https://telegram.me/vj_botz)
 
 ## Support Group [VJ Support](https://telegram.me/vj_bot_disscussion)
 
 ## Credit - [Tech VJ](https://youtube.com/@Tech_VJ)
-
-
-## Deployment
-This bot starts with `python3 bot.py` and exposes a Render health endpoint.
